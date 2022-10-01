@@ -1,7 +1,11 @@
+import { useState } from "react"
+
 function SearchBar(){
+    const [search, setSearch] = useState("")
+
     return(
         <div className="navbar-secondLine">
-            <input type="test" placeholder="    Put your research"/>
+            <input type="test" value={search} onChange={ (event)=> setSearch(event.target.value) } placeholder="    Put your research"/>
         </div>
     )
 }
