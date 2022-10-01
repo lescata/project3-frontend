@@ -1,10 +1,5 @@
-function Success(){
-    return(
-        <div>
-            test
-        </div>
-    )
+function Success() {
+  return <div>Success</div>;
 }
-
 
 export default Success;

@@ -1,10 +1,5 @@
-function Payment(){
-    return(
-        <div>
-            test
-        </div>
-    )
+function Payment() {
+  return <div>Payment</div>;
 }
-
 
 export default Payment;
