@@ -15,10 +15,12 @@ import Signup from "./Pages/Signup";
 import Success from "./Pages/Success";
 import Cgu from "./Pages/Cgu";
 import Contact from "./Pages/Contact";
+import Navbar from "./Components/Navbar";
 
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />

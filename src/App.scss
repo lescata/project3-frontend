@@ -1,27 +1,54 @@
-body {
-  align-items: center;
-  // background-image: url("../public/Images/1099314.jpg");
-}
+.navbar{
+  width: 100vw;
+  height: 100px;  //default:65px
+  background-color: #CF1010;
+  padding-top: 5px;
 
-input {
-  width: 80%;
-  height: 35px;
-  display: block;
-  margin: 20px auto;
-  border-radius: 5px;
-  background-color: rgba(255, 255, 255, 0.3);
-  border: none;
-  color: #fff;
-  padding: 15px;
-  transition: 0.5s;
-  text-transform: capitalize;
-}
+  .navbar-firstLine{
+    display: flex;
+    align-items: center;
+    height: 100%;
 
-input::placeholder {
-  color: #fff;
-}
+    .navbar-image{
+      height: 35px;
+    }
 
-input:focus {
-  background-color: #fff;
-  color: #000;
+    .navbar-logo{
+      height: 50px;
+    }
+
+    .begin{
+      margin-left: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .end{
+      margin-left: auto;
+      margin-right: 10px;
+      display: flex;
+      gap: 10px;
+    }
+
+    .searchBar{
+      display: block;
+    }
+  }
+
+  .navbar-secondLine{
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    
+    input{
+      width: 90%;
+      height: 25px;
+      background-image: url("https://res.cloudinary.com/shalltear/image/upload/v1664646980/Projet%203/loupe_cllhfy.png");
+      background-repeat: no-repeat;
+      background-position: calc(100% - 5px);
+      background-size: 20px;
+      border: none;
+    }
+  }
 }
