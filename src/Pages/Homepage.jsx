@@ -1,7 +1,9 @@
+import Slider from "../Components/Slider"
+
 function Homepage(){
     return(
         <div>
-            test
+            <Slider />
         </div>
     )
 }

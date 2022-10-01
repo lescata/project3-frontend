@@ -1,0 +1,25 @@
+[
+    {
+        "id": 1,
+        "title": "-10% for HP screen",
+        "description": "Offer valid until 31/12/2022",
+        "backgroundImage": "https://media.ldlc.com/encart/p/18717_b.jpg",
+        "href": "https://matos.com/products/screens?brand=HP"
+    },
+    {
+        "id": 2,
+        "title": "-5% for MSI motherboard",
+        "description": "Offer valid until 07/12/2022",
+        "backgroundImage": "https://media.ldlc.com/encart/p/18720_b.jpg",
+        "href": "https://matos.com/products/motherboard?brand=MSI"
+    },
+    {
+        "id": 3,
+        "title": "-5% for MSI motherboard",
+        "description": "Offer valid until 07/12/2022",
+        "backgroundImage": "https://media.ldlc.com/encart/p/15824_b.jpg",
+        "href": "https://matos.com/products/motherboard?brand=MSI"
+    }
+]
+  
+     
