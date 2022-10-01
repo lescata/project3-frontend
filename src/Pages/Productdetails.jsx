@@ -1,5 +1,5 @@
 function Productdetails() {
-  return <div></div>;
+  return <div>Productdetails</div>;
 }
 
 export default Productdetails;

@@ -1,10 +1,5 @@
-function Rejected(){
-    return(
-        <div>
-            test
-        </div>
-    )
+function Rejected() {
+  return <div>Rejected</div>;
 }
-
 
 export default Rejected;
