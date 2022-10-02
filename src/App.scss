@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
+@keyframes hamburgerOpen {
+  0% { margin-top: -500px; opacity: 0; }
+  50%{ opacity: 1; }
+  100% { margin-left:0; }
+}
+
 .navbar{
   width: 100vw;
   height: 100px;  //default:65px
@@ -38,6 +44,13 @@
     }
   }
 
+  .navbar-Mobile .open{
+    display: block;
+    animation-name: hamburgerOpen;
+    animation-timing-function: ease;
+    animation-duration: .35s;
+  }
+
   .navbar-secondLine{
     display: flex;
     justify-content: center;
@@ -56,6 +69,7 @@
 
   .hamburgerMenu{
     z-index: 20;
+    display: none;
     position: fixed;
     width: 100vw;
     height: 100vh;
@@ -74,9 +88,9 @@
     }
 
     img {
-
       position:fixed;
-      margin-left: calc(100vw - 60px);
+      margin-left: calc(100vw - 75px);
+      margin-top: 30px;
       z-index: 100;
     }
   }
