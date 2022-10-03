@@ -1,4 +1,24 @@
 {
+  "workbench.colorCustomizations": {
+    "activityBar.activeBackground": "#ddd9c7",
+    "activityBar.background": "#ddd9c7",
+    "activityBar.foreground": "#15202b",
+    "activityBar.inactiveForeground": "#15202b99",
+    "activityBarBadge.background": "#609f93",
+    "activityBarBadge.foreground": "#15202b",
+    "commandCenter.border": "#15202b99",
+    "sash.hoverBorder": "#ddd9c7",
+    "statusBar.background": "#c9c3a8",
+    "statusBar.foreground": "#15202b",
+    "statusBarItem.hoverBackground": "#b5ad89",
+    "statusBarItem.remoteBackground": "#c9c3a8",
+    "statusBarItem.remoteForeground": "#15202b",
+    "titleBar.activeBackground": "#c9c3a8",
+    "titleBar.activeForeground": "#15202b",
+    "titleBar.inactiveBackground": "#c9c3a899",
+    "titleBar.inactiveForeground": "#15202b99"
+  },
+  "peacock.color": "#c9c3a8",
   "files.exclude": {
     "logs": "explorerExcludedFiles",
     "*.log": "explorerExcludedFiles",
@@ -45,25 +65,5 @@
     ".fusebox/": "explorerExcludedFiles",
     ".dynamodb/": "explorerExcludedFiles",
     ".tern-port": "explorerExcludedFiles"
-  },
-  "workbench.colorCustomizations": {
-    "activityBar.activeBackground": "#ddd9c7",
-    "activityBar.background": "#ddd9c7",
-    "activityBar.foreground": "#15202b",
-    "activityBar.inactiveForeground": "#15202b99",
-    "activityBarBadge.background": "#609f93",
-    "activityBarBadge.foreground": "#15202b",
-    "commandCenter.border": "#15202b99",
-    "sash.hoverBorder": "#ddd9c7",
-    "statusBar.background": "#c9c3a8",
-    "statusBar.foreground": "#15202b",
-    "statusBarItem.hoverBackground": "#b5ad89",
-    "statusBarItem.remoteBackground": "#c9c3a8",
-    "statusBarItem.remoteForeground": "#15202b",
-    "titleBar.activeBackground": "#c9c3a8",
-    "titleBar.activeForeground": "#15202b",
-    "titleBar.inactiveBackground": "#c9c3a899",
-    "titleBar.inactiveForeground": "#15202b99"
-  },
-  "peacock.color": "#c9c3a8"
+  }
 }

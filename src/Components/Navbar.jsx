@@ -9,11 +9,11 @@ function Navbar(){
         <div className="navbar">
             <div className="navbar-Mobile">
                 <div className={`hamburgerMenu ${hamburgerClass}`}>
-                    <img onClick={()=>setHamburgerClass("")} src="https://res.cloudinary.com/shalltear/image/upload/v1664662956/Projet%203/Group_3_y7xdiz.svg" alt=""/>
+                    <img onClick={()=>setHamburgerClass("")} className="hamburgerCross" src="https://res.cloudinary.com/shalltear/image/upload/v1664662956/Projet%203/Group_3_y7xdiz.svg" alt=""/>
                     <div className="hamburgerLink">
-                        <Link to="#">Televisions</Link>
-                        <Link to="#">Laptops</Link>
-                        <Link to="#">Consoles</Link>
+                        <Link to="#"><img src="https://res.cloudinary.com/shalltear/image/upload/v1664816900/Projet%203/televisions_gwtagx.svg" alt=""/> <span>Televisions</span></Link>
+                        <Link to="#"><img src="https://res.cloudinary.com/shalltear/image/upload/v1664816900/Projet%203/laptops_c5mkro.svg" alt="" />Laptops</Link>
+                        <Link to="#"><img src="https://res.cloudinary.com/shalltear/image/upload/v1664816901/Projet%203/consoles_acen0m.svg" alt="" />Consoles</Link>
                     </div>
                 </div>
                 <div className="navbar-firstLine">
