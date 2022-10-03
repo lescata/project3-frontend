@@ -1,7 +1,7 @@
 function Login() {
   return (
     <div classeName="login">
-      <h1 className="heading">login</h1>
+      <h1 className="heading">Login</h1>
       <input type="email" placeholder="email" className="email" required />
       <input
         type="password"
@@ -9,6 +9,9 @@ function Login() {
         className="passeword"
         required
       />
+
+      <div className="login-btn">Login</div>
+      <p className="text">New Here??</p>
     </div>
   );
 }
