@@ -1,0 +1,30 @@
+[
+    {
+        "id": 1,
+        "image": "https://media.ldlc.com/r374/ld/products/00/05/98/23/LD0005982349.jpg",
+        "name": "Audio-Technica ATH-M50xBT2DS Bleu",
+        "price": "229,96€",
+        "href": "#"
+    },
+    {
+        "id": 2,
+        "image": "https://media.ldlc.com/r374/ld/products/00/05/98/23/LD0005982340.jpg",
+        "name": "Cambridge Audio AXA25 + AXC35",
+        "price": "649,90€",
+        "href": "#"
+    },
+    {
+        "id": 3,
+        "image": "https://media.ldlc.com/r374/ld/products/00/05/98/25/LD0005982567.jpg",
+        "name": "StarTech.com Hub Adaptateur USB",
+        "price": "449,95€",
+        "href": "#"
+    },
+    {
+        "id": 4,
+        "image": "https://media.ldlc.com/r374/ld/products/00/05/89/53/LD0005895313_1_0005895359_0005982295.jpg",
+        "name": "ASUS ExpertBook B1 B1400CENT-EK4938R",
+        "price": "909,95€",
+        "href": "#"
+    }
+]
