@@ -28,7 +28,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/category" element={<Category />} />
+          <Route path="/category/:name" element={<Category />} />
           <Route path="/error" element={<Error />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/payment" element={<Payment />} />
@@ -39,6 +39,7 @@ function App() {
           <Route path="/success" element={<Success />} />
           <Route path="/cgu" element={<Cgu />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="*" element={<Error />} />
         </Routes>
       </div>
       <Footer />

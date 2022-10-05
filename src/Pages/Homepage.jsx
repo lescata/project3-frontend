@@ -1,3 +1,4 @@
+import "../Sass/homepage.scss"
 import Slider from "../Components/Slider"
 import Product from "../Components/Homepage/Product";
 import productsJson from "../newness.json"
