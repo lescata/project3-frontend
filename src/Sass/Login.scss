@@ -1,5 +1,58 @@
-.login {
-  p {
+.routes {
+  font-family: "Ubuntu";
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .heading {
+    margin-bottom: 20%;
+  }
+  .login {
+    transform: translateY(-15%);
+  }
+  .text {
     color: red;
+    font-weight: bold;
+    text-align: center;
+  }
+  .text-twoo {
+    font-weight: bold;
+    text-align: center;
+  }
+  .text-three {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+  }
+}
+
+.login-connection {
+  background-color: rgb(233, 233, 233);
+  width: 17em;
+  height: 20em;
+  position: relative;
+  border-radius: 4em;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+
+  input {
+    width: 15em;
+    height: 2em;
+    text-align: center;
+  }
+
+  .login-btn {
+    width: 40%;
+    height: 8%;
+    border-radius: 2em;
+    background-color: rgb(75, 255, 47);
+    background-position: center;
+    background-size: contain;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
   }
 }
