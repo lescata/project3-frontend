@@ -1,6 +1,8 @@
+import "../Sass/Login.scss";
+
 function Login() {
   return (
-    <div classeName="login">
+    <div className="login">
       <h1 className="heading">Login</h1>
       <input type="email" placeholder="email" className="email" required />
       <input

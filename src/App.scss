@@ -1,69 +1,76 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
 
 @keyframes hamburgerOpen {
-  0% { margin-top: -500px; opacity: 0; }
-  50%{ opacity: 1; }
-  100% { margin-top:0; }
+  0% {
+    margin-top: -500px;
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    margin-top: 0;
+  }
 }
 
-h1{
-  font-family: 'Ubuntu';
-  color: #5E5C5C;
+h1 {
+  font-family: "Ubuntu";
+  color: #5e5c5c;
   font-size: 24px;
   text-align: center;
 }
 
-.navbar{
+.navbar {
   width: 100vw;
-  height: 100px;  //default:65px
-  background-color: #CF1010;
+  height: 100px; //default:65px
+  background-color: #cf1010;
   padding-top: 5px;
 
-  .navbar-firstLine{
+  .navbar-firstLine {
     display: flex;
     align-items: center;
     height: 100%;
 
-    .navbar-image{
+    .navbar-image {
       height: 35px;
     }
 
-    .navbar-logo{
+    .navbar-logo {
       height: 50px;
     }
 
-    .begin{
+    .begin {
       margin-left: 10px;
       display: flex;
       align-items: center;
       gap: 10px;
     }
 
-    .end{
+    .end {
       margin-left: auto;
       margin-right: 10px;
       display: flex;
       gap: 10px;
     }
 
-    .searchBar{
+    .searchBar {
       display: block;
     }
   }
 
-  .navbar-Mobile .open{
+  .navbar-Mobile .open {
     display: block;
     animation-name: hamburgerOpen;
     animation-timing-function: ease;
-    animation-duration: .35s;
+    animation-duration: 0.35s;
   }
 
-  .navbar-secondLine{
+  .navbar-secondLine {
     display: flex;
     justify-content: center;
     margin-top: 10px;
-    
-    input{
+
+    input {
       width: 90%;
       height: 25px;
       background-image: url("https://res.cloudinary.com/shalltear/image/upload/v1664646980/Projet%203/loupe_cllhfy.png");
@@ -74,15 +81,15 @@ h1{
     }
   }
 
-  .hamburgerMenu{
+  .hamburgerMenu {
     z-index: 20;
     display: none;
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: #CF1010;
+    background-color: #cf1010;
 
-    .hamburgerLink{
+    .hamburgerLink {
       display: flex;
       flex-direction: column;
       row-gap: 20px;
@@ -91,21 +98,23 @@ h1{
       width: 100%;
       height: 100%;
 
-      a{
+      a {
         display: flex;
         align-items: center;
         font-size: 32px;
-        font-family: 'Ubuntu';
+        font-family: "Ubuntu";
         color: white;
         text-decoration: none;
         gap: 15px;
 
-        img { width: 45px }
+        img {
+          width: 45px;
+        }
       }
     }
 
     .hamburgerCross {
-      position:fixed;
+      position: fixed;
       margin-left: calc(100vw - 75px);
       margin-top: 30px;
       z-index: 100;
@@ -113,18 +122,18 @@ h1{
   }
 }
 
-.homepage{
-  .products{
+.homepage {
+  .products {
     width: 100vw;
     display: flex;
     flex-wrap: wrap;
   }
-  .product{
+  .product {
     width: 50%;
     text-align: center;
     box-sizing: border-box;
 
-    .productImage{
+    .productImage {
       height: 150px;
     }
 
@@ -132,47 +141,48 @@ h1{
       text-decoration: none;
     }
 
-    h3{
+    h3 {
       margin: 0;
       font-size: 14px;
       color: black;
-      font-family: 'Ubuntu';
+      font-family: "Ubuntu";
     }
 
-    h4{
+    h4 {
       margin: 0;
       font-size: 14px;
-      color: #CF1010;
-      font-family: 'Ubuntu';
+      color: #cf1010;
+      font-family: "Ubuntu";
     }
 
-    .priceAndcartLogo{
+    .priceAndcartLogo {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 5px;
       margin-top: 10px;
 
-      .cartLogo{
+      .cartLogo {
         height: 30px;
       }
     }
   }
 }
 
-.routes{ // Pour que le footer soit toujours en bas
+.routes {
+  // Pour que le footer soit toujours en bas
   min-height: calc(100vh - 175px);
 }
 
-footer{
-  background-color: #CF1010;
+footer {
+  background-color: #cf1010;
   height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 50px;
-  
-  a{
+
+  a {
     color: white;
     text-decoration: none;
   }
