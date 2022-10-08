@@ -1,4 +1,5 @@
 import "../Sass/login.scss";
+import { Link } from "react-router-dom"
 
 function Login() {
   return (
@@ -17,9 +18,9 @@ function Login() {
       </div>
       <p className="text">New Here??</p>
       <p className="text-twoo">
-        <a href="" className="text-three">
+        <Link to="#" className="text-three">
           Signup
-        </a>{" "}
+        </Link>
         and create an account TODAY!
       </p>
     </div>

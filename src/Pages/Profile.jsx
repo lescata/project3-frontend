@@ -1,11 +1,12 @@
 import "../Sass/profile.scss";
+import { Link } from "react-router-dom"
 
 function Profile() {
   return (
     <div className="contactDetails">
       <p>
-        <a href="">Commandes</a>
-        <a href="">Profile</a>
+        <Link to="#">Commandes</Link>
+        <Link to="#">Profile</Link>
       </p>
       <h1 className="heading">YOUR CONTACT DETAILS</h1>
       <div className="info-Details">

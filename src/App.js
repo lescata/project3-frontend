@@ -17,18 +17,34 @@ import Cgu from "./Pages/Cgu";
 import Contact from "./Pages/Contact";
 import Navbar from "./Components/Navbar";
 import Footer from "./Components/Footer";
+import axios from "axios";
+import { useContext } from "react"
+import { CartContext } from "./Context/cart.context"
 
 function App() {
+  const { cart, updateCart } = useContext(CartContext)
+
+  function AddProductToCart(id){
+    axios.post(`http://localhost:5005/api/cart?_id=${id}`)
+    .then((response)=> {
+      console.log("axios before",cart)
+      updateCart(response.data)
+      console.log(`add cart ${id} success`)
+      console.log("axios after",cart)
+    })
+    .catch(err => console.log(err))
+  }
+
   return (
     <div className="App">
       <Navbar />
       <div className="routes">
         <Routes>
-          <Route path="/" element={<Homepage />} />
+          <Route path="/" element={<Homepage addProductToCart={AddProductToCart} />} />
           <Route path="/login" element={<Login />} />
           <Route path="/about" element={<About />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/category/:category" element={<Category />} />
+          <Route path="/cart"  element={<Cart />} />
+          <Route path="/category/:category" element={<Category addProductToCart={AddProductToCart} />} />
           <Route path="/error" element={<Error />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/payment" element={<Payment />} />
