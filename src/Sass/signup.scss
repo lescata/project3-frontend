@@ -1,0 +1,37 @@
+.signup {
+  font-family: "Ubuntu";
+  justify-content: center;
+  min-height: calc(100vh - 175px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    width: 15em;
+    height: 2em;
+    text-align: center;
+  }
+
+  .login-btn {
+    width: 40%;
+    height: 8%;
+    border-radius: 2em;
+    background-color: rgb(75, 255, 47);
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+  }
+  .signup-info {
+    background-color: rgb(233, 233, 233);
+    width: 17em;
+    height: 20em;
+    position: relative;
+    border-radius: 2em;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+}
