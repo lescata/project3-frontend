@@ -31,33 +31,32 @@ function Profile() {
           className="password"
           required
         />
-
-        <div className="address">
-          <h1 className="heading">ADDRESS</h1>
-          <div className="street">
-            <input
-              type="number"
-              placeholder="Number"
-              className="number"
-              required
-            />
-            <input
-              type="streetName"
-              placeholder="Street Name"
-              className="streetName"
-              required
-            />
-          </div>
-
-          <input type="city" placeholder="City" className="city" required />
-
+      </div>
+      <div className="address">
+        <h1 className="heading">ADDRESS</h1>
+        <div className="street">
           <input
-            type="country"
-            placeholder="Country"
-            className="country"
+            type="number"
+            placeholder="Number"
+            className="number"
+            required
+          />
+          <input
+            type="streetName"
+            placeholder="Street Name"
+            className="streetName"
             required
           />
         </div>
+
+        <input type="city" placeholder="City" className="city" required />
+
+        <input
+          type="country"
+          placeholder="Country"
+          className="country"
+          required
+        />
       </div>
     </div>
   );
