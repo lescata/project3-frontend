@@ -1,15 +1,11 @@
-.routes {
+.login {
   font-family: "Ubuntu";
-  display: flex;
-  align-items: center;
   justify-content: center;
+  min-height: calc(100vh - 175px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-  .heading {
-    margin-bottom: 20%;
-  }
-  .login {
-    transform: translateY(-15%);
-  }
   .text {
     color: red;
     font-weight: bold;
@@ -49,10 +45,9 @@
     height: 8%;
     border-radius: 2em;
     background-color: rgb(75, 255, 47);
-    background-position: center;
-    background-size: contain;
-    text-align: center;
-    cursor: pointer;
+    justify-content: center;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
   }
 }
