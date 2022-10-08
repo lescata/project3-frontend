@@ -23,6 +23,7 @@ import { CartContext } from "./Context/cart.context"
 
 function App() {
   const { cart, updateCart } = useContext(CartContext)
+  axios.defaults.withCredentials = true;
 
   function AddProductToCart(id){
     axios.post(`http://localhost:5005/api/cart?_id=${id}`)

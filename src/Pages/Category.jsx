@@ -3,8 +3,8 @@ import { useEffect, useState } from "react"
 import axios from "axios"
 import "../Sass/category.scss"
 
-function Category() {
-  const [products, setProducts] = useState([{images:[""],name:"",details:[{"value":"Loading"}],price:{"value":""}}])
+function Category(props) {
+  const [products, setProducts] = useState("Loading")
   const { category } = useParams()
 
   useEffect(() => {
@@ -12,7 +12,6 @@ function Category() {
     .then(response => setProducts(response.data))
   }, [category])
 
-  console.log("name",category)
   return (
     <div className="category">
     <div className="categoryName">
@@ -20,23 +19,31 @@ function Category() {
     </div>
       <div className="products">
         {
-          products.map(product => (
-            <div className="product">
-              <div className="productImagesAndInfos">
-                <Link to={`/productdetails/${product._id}`}><img src={product.images[0]} alt="" /></Link>
-                <div className="productInfos">
-                  <Link to={`/productdetails/${product._id}`}><h2>{product.name}</h2></Link>
-                  <Link to={`/productdetails/${product._id}`}><h3>{product.details.map(details => <div>{details.value} </div> )}</h3></Link>
+          products !== "Loading" && (
+            products.map(product => (
+              <div className="product" key={product._id}>
+                <div className="productImagesAndInfos">
+                  <Link to={`/productdetails/${product._id}`}><img src={product.images[0]} alt="" /></Link>
+                  <div className="productInfos" key={product._id}>
+                    <Link to={`/productdetails/${product._id}`}><h2>{product.name}</h2></Link>
+                    <Link to={`/productdetails/${product._id}`}><h3>{product.details.map(details => <div>{details.value} </div> )}</h3></Link>
+                  </div>
+                </div>
+                <div className="productOther">
+                  <span className="productAvailability">AVAILABILITY : 
+                  {product.stock > 0 ? <div className="isAvailable">IN STOCK</div> : <div className="isNotAvailable">OUT OF STOCK</div>}
+                  </span>
+                  <div>
+                    <span className="productPrice">{product.price.value}€ </span>
+                    {
+                      product.stock > 0 ? 
+                      <img className="cartLogo" onClick={e => props.addProductToCart(product._id)} src="https://res.cloudinary.com/shalltear/image/upload/v1664820508/Projet%203/cartLogo_wzapnc.svg" alt="" />
+                      : <img className="cartLogo outOfStock" src="https://res.cloudinary.com/shalltear/image/upload/v1664820508/Projet%203/cartLogo_wzapnc.svg" alt="" />
+                    }
+                  </div>
                 </div>
               </div>
-              <div className="productOther">
-                <span className="productAvailability">AVAILABILITY : IN STOCK</span>
-                <div>
-                  <span className="productPrice">{product.price.value}€ </span>
-                  <img className="cartLogo" src="https://res.cloudinary.com/shalltear/image/upload/v1664820508/Projet%203/cartLogo_wzapnc.svg" alt="" />
-                </div>
-              </div>
-            </div>
+            )
           ))
         }
       </div>

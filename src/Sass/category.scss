@@ -50,11 +50,15 @@
         }
         .productOther{
             display: flex;
-            .productAvailability{
+            .productAvailability, .isAvailable, .isNotAvailable {
                 font-family: "Inter";
                 font-size: 11px;
                 display: flex;
                 align-items: center;
+                gap: 5px;
+
+                .isAvailable{ color: #2BB831; }
+                .isNotAvailable{ color: #FF0000; }
             }
             div{
                 margin-left: auto;
@@ -66,6 +70,10 @@
                 display: flex;
                 align-items: center;
                 gap: 5px;
+                
+                .outOfStock{
+                    filter: grayscale(100%);
+                }
             }
         }
     }
