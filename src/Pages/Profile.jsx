@@ -1,13 +1,13 @@
 import "../Sass/profile.scss";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function Profile() {
   return (
     <div className="contactDetails">
-      <p>
-        <Link to="#">Commandes</Link>
-        <Link to="#">Profile</Link>
-      </p>
+      <div className="container-onglets">
+        <div className="onglets">Profile</div>
+        <div className="onglets active">Orders</div>
+      </div>
       <h1 className="heading">YOUR CONTACT DETAILS</h1>
       <div className="info-Details">
         <input

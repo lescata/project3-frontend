@@ -4,6 +4,33 @@
   flex-direction: column;
   align-items: center;
 
+  .container-onglets {
+    width: 100%;
+    display: flex;
+    margin-bottom: em;
+  }
+  .onglets {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    height: 3em;
+    cursor: pointer;
+  }
+  h1 {
+    margin-bottom: 2em;
+  }
+
+  // ont prend tout les onglets mais pas le 1er
+  .onglets:not(:nth-child(1)) {
+    border-left: 1px solid black;
+  }
+  .active {
+    background-color: gray;
+    color: white;
+    border-bottom: 1px solid black;
+  }
   .info-Details {
     border-radius: 2em;
     display: flex;
@@ -17,6 +44,7 @@
 .street {
   .number {
     width: 1.6em;
+    margin-right: 5px;
   }
   .streetName {
     width: 10em;
