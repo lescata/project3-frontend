@@ -1,0 +1,27 @@
+.orderHistory {
+  text-decoration: none;
+
+  h1 {
+    margin-bottom: 2em;
+  }
+  p {
+    margin: 0;
+  }
+  .orders {
+    border-bottom: 1px solid black;
+  }
+  .orderNumber {
+    font-weight: bold;
+  }
+  .orderShipp {
+    color: rgb(8, 189, 8);
+  }
+  .orderTracking {
+    font-weight: bold;
+    margin-bottom: 2px;
+  }
+  .orderDetails {
+    display: flex;
+    justify-content: center;
+  }
+}
