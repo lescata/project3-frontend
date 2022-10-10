@@ -1,4 +1,5 @@
 import "../Sass/profile.scss";
+import "../Sass/onglets.scss";
 import { Link } from "react-router-dom";
 
 function Profile() {
