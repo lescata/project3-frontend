@@ -22,16 +22,14 @@ import { useContext } from "react"
 import { CartContext } from "./Context/cart.context"
 
 function App() {
-  const { cart, updateCart } = useContext(CartContext)
+  const { updateCart } = useContext(CartContext)
   axios.defaults.withCredentials = true;
+  axios.defaults.baseURL = "http://localhost:5005/api"
 
   function AddProductToCart(id){
-    axios.post(`http://localhost:5005/api/cart?_id=${id}`)
+    axios.post(`/cart?_id=${id}`)
     .then((response)=> {
-      console.log("axios before",cart)
       updateCart(response.data)
-      console.log(`add cart ${id} success`)
-      console.log("axios after",cart)
     })
     .catch(err => console.log(err))
   }
