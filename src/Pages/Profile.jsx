@@ -5,8 +5,8 @@ function Profile() {
   return (
     <div className="contactDetails">
       <div className="container-onglets">
-        <div className="onglets">Profile</div>
-        <div className="onglets active">Orders</div>
+        <div className="onglets active">Profile</div>
+        <div className="onglets">Orders</div>
       </div>
       <h1 className="heading">YOUR CONTACT DETAILS</h1>
       <div className="info-Details">
