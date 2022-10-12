@@ -51,6 +51,7 @@ h1 {
       margin-right: 10px;
       display: flex;
       gap: 10px;
+
       .infoCart{
         display: flex;
         border: solid 1px black;
@@ -59,17 +60,13 @@ h1 {
         height: 15px;
         align-items: center;
         justify-content: center;
-        position: fixed;
+        position:absolute;
         transform: translate(70px, -5px);
         background-color: white;
         font-family: "Inter";
         font-weight: bold;
         font-size: 12px;
       }
-    }
-
-    .searchBar {
-      display: block;
     }
   }
 
@@ -80,19 +77,57 @@ h1 {
     animation-duration: 0.35s;
   }
 
-  .navbar-secondLine {
+  .navbar-searchBar {
     display: flex;
     justify-content: center;
     margin-top: 10px;
+    height: 27px;
 
     input {
-      width: 90%;
+      width: 85%;
       height: 25px;
       background-image: url("https://res.cloudinary.com/shalltear/image/upload/v1664646980/Projet%203/loupe_cllhfy.png");
       background-repeat: no-repeat;
       background-position: calc(100% - 5px);
       background-size: 20px;
       border: none;
+      padding-left: 10px;
+    }
+  }
+
+  .searchResult{
+    position: absolute;
+    border: solid 1px black;
+    box-sizing: border-box;
+    background-color: white;
+    z-index: 40;
+    width: 100%;
+    //display: none;
+
+    a{ text-decoration: none; }
+
+    .searchCard{
+      display: flex;
+      height: 80px;
+      border-bottom: dotted 1px #C9C9C9;
+      
+      img{
+        display: flex;
+        width: 60px;
+        height: max-content;
+        margin-top: 15px;
+        margin-left: 10px;
+      }
+
+      span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        color: black;
+        font-family: "Inter";
+        font-size: 15px;
+      }
     }
   }
 
