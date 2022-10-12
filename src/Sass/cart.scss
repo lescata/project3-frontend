@@ -1,0 +1,56 @@
+.cartList{
+    .cart{
+        display: flex;
+        height: 100px;
+        border: solid 1px black;
+
+        .cartImage{
+            display: flex;
+            align-items: center;
+            img{
+                width: 80px;
+            }
+        }
+
+        .cartInfos{
+            width: 60%;
+            margin-left:15px;
+
+            h4{
+                display: flex;
+                align-items: center;
+                font-family: "Inter";
+                font-weight: normal;
+                margin-top: 5px;
+                margin-bottom: 5px;
+                font-size: 14px;
+                height: 51px;
+                overflow: hidden;
+            }
+
+            .quantityAndPrice{
+                display: flex;
+                align-items: center;
+                gap: 15px;
+                input{
+                    width: 55px;
+                    text-align: center;
+                    margin: 0;
+                }
+                span{
+                    font-weight: bold;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .cartCross{
+            display: flex;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            margin-left: auto;
+            margin-right: 25px;
+            img{height: 25px;}
+        }
+    }
+}

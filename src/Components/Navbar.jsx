@@ -6,7 +6,7 @@ import { CartContext } from "../Context/cart.context"
 function Navbar(){
     const [hamburgerClass, setHamburgerClass] = useState("")
     const { cart } = useContext(CartContext)
-    
+
     return(
         <div className="navbar">
             <div className="navbar-Mobile">
@@ -25,7 +25,7 @@ function Navbar(){
                     </div>
                     <div className="end">
                         <Link to="#"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/user_fva09x.svg" alt=""/></Link>
-                        <Link to="#"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/cart_xds8mu.svg" alt=""/></Link>
+                        <Link to="/cart"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/cart_xds8mu.svg" alt=""/></Link>
                         {
                             cart.length > 0 &&
                             <div className="infoCart">

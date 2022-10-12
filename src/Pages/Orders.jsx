@@ -29,10 +29,9 @@ function Orders() {
               src="https://media.ldlc.com/r374/ld/products/00/05/98/23/LD0005982349.jpg"
               alt="img"
             />
-            <p className="orderReference">
-              Audio-Technica ATH-M50xBT2DS Bleu
-              <p className="orderPrice">399,95€</p>
-            </p>
+            <p className="orderReference">Audio-Technica ATH-M50xBT2DS Bleu</p>
+            <p className="orderPrice">399,95€</p>
+            
           </div>
 
           <div className="orderDetailsPrice">

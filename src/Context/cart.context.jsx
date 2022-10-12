@@ -7,11 +7,8 @@ function CartProviderWrapper(props) {
   const [cart, setCart] = useState("loading");
   
   useEffect(() => {
-
-
-    axios.get(`http://localhost:5005/api/cart`)
+    axios.get(`/cart`)
     .then(response => {
-        console.log("axios init:", response.data)
         setCart(response.data)
     })
     .catch(err => {console.log("Error get axios app.js:", err)})
