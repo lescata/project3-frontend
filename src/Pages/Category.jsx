@@ -24,10 +24,10 @@ function Category(props) {
           products.map(product => (
             <div className="product" key={product._id}>
               <div className="productImagesAndInfos">
-                <Link to={`/productdetails/${product._id}`}><img src={product.images[0]} alt="" /></Link>
+                <Link to={`/products/${product._id}`}><img src={product.images[0]} alt="" /></Link>
                 <div className="productInfos">
-                  <Link to={`/productdetails/${product._id}`}><h2>{product.name}</h2></Link>
-                  <Link to={`/productdetails/${product._id}`}><h3>{product.details.map(details => <span key={details._id}>{details.value} </span>)}</h3></Link>
+                  <Link to={`/products/${product._id}`}><h2>{product.name}</h2></Link>
+                  <Link to={`/products/${product._id}`}><h3>{product.details.map(details => <span key={details._id}>{details.value} </span>)}</h3></Link>
                 </div>
               </div>
               <div className="productOther">

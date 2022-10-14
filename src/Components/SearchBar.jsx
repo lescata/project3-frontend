@@ -27,6 +27,7 @@ function SearchBar() {
         <div>
             <div className="navbar-searchBar">
                 <DebounceInput
+                    placeholder="Put your research"
                     debounceTimeout={150}
                     value={search}
                     onChange={(event) => searchRequest(event.target.value)}
