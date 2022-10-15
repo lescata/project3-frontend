@@ -2,10 +2,12 @@ import SearchBar from "./SearchBar"
 import { Link } from "react-router-dom"
 import { useState, useContext } from "react"
 import { CartContext } from "../Context/cart.context"
+import {AuthContext} from "../Context/auth.context"
 
 function Navbar(){
     const [hamburgerClass, setHamburgerClass] = useState("")
     const { cart } = useContext(CartContext)
+    const {isLoggedIn, user} = useContext(AuthContext);
 
     return(
         <div className="navbar">
@@ -24,7 +26,8 @@ function Navbar(){
                         <Link to="/"><img className="navbar-logo" src="https://res.cloudinary.com/shalltear/image/upload/v1664643558/Projet%203/logo_dewzrz.png" alt="" /></Link>
                     </div>
                     <div className="end">
-                        <Link to="#"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/user_fva09x.svg" alt=""/></Link>
+                        {isLoggedIn && (<Link to="/profile"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/user_fva09x.svg" alt="ouiii"/> </Link>)}
+                        {!isLoggedIn && ( <Link to="/login"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/user_fva09x.svg" alt="paslogged in"/></Link>)}
                         <Link to="/cart"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/cart_xds8mu.svg" alt=""/></Link>
                         {
                             cart.length > 0 &&
