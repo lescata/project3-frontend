@@ -5,7 +5,7 @@ function Error() {
     <div className="error">
       <div className="imageError">
         <img
-          src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1665602889/image-erreur-404_ztjkkv.png"
+          src="https://res.cloudinary.com/dq7egs1s7/image/upload/v1665826470/image_19_kcwkdl.png"
           alt="imgError404"
         />
       </div>
