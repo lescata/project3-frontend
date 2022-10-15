@@ -7,6 +7,10 @@ import { Link } from "react-router-dom"
 function Cart() {
   const { cart, updateCart } = useContext(CartContext)
 
+  // const totalPrice = useMemo(() => {
+  //   return getTotalPrice()
+  // }, [cart])
+
   if (cart === 'loading') return "loading..."
 
   function changeQuantity(index,event){
@@ -33,11 +37,11 @@ function Cart() {
 
   function getTotalPrice(){
     let totalPrice = 0
-    cart.map(el=>{
+    cart.map(el=>(
       totalPrice = totalPrice + (el.price * el.quantity)
-    })
+    ))
 
-    return <span>{totalPrice}€</span>
+    return totalPrice
   }
 
   return (
@@ -47,8 +51,8 @@ function Cart() {
           cart.length === 0 ? <div>Cart Empty</div> :
           <div className="cartlist">
             {
-              cart.map((cartEl,i) =>(
-                  <div className="cart" key={cartEl._id}>
+              cart.map((cartEl,i) =>{
+                  return (<div className="cart" key={cartEl._id}>
                     <div className="cartImage"><img src={cartEl.image} alt="" /></div>
                     <div className="cartInfos">
                       <h4>{cartEl.name}</h4>
@@ -58,8 +62,8 @@ function Cart() {
                       </div>
                     </div>
                     <div className="cartCross"><img onClick={()=> removeProduct(cartEl._id)}src="https://res.cloudinary.com/shalltear/image/upload/v1665428662/Projet%203/crossCart_h05y4h.png" alt="" /></div>
-                  </div>
-                ))
+                  </div>)
+            })
             }
             <div className="adressGlobale">
               <div className="adressInfos">
@@ -72,10 +76,9 @@ function Cart() {
               </div>
             </div>
             <div className="totalPrice">
+
               <h3>TOTAL TTC</h3>
-                {
-                  getTotalPrice()
-                }
+              <span>{getTotalPrice()} €</span>
             </div>
             <div className="toOrder">
               <span onClick={deleteCart}>Erase cart</span>

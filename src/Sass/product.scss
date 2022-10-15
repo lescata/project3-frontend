@@ -1,0 +1,85 @@
+.product{
+    .ProductName{
+        margin-top: 16px;
+        display:flex;
+        align-items: baseline;
+        gap: 5px;
+        font-family: "Inter";
+        color: #CF1010;
+        
+        h2{margin: 0;}
+        
+        h2::first-letter{
+            text-transform: uppercase;
+        }
+
+        h2:nth-child(1){
+            margin-left:24px;
+        }
+
+        h2:nth-child(2){
+            font-size: 15px;
+        }
+    }
+
+    .productImages{
+        text-align: center;
+        margin-top: 20px;
+        img{
+            max-width: 80%;
+            height: 300px;
+            object-fit: contain;
+        }
+    }
+
+    .productArray{
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+
+        table{
+            border-collapse: collapse;
+            width: 70%;
+            text-align: center;
+            background-color: #EEEDED;
+            font-family: "Inter";
+            box-shadow: 2px 2px 2px gray;
+
+            tr{
+                border: solid 1px black;
+                font-size: 12px;
+            }
+
+            td:nth-child(1){
+                font-weight: bold;
+                padding-block: 10px;
+            }
+        }
+    }
+
+    .productPrice{
+        color: #CF1010;
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .availability{
+        display: flex;
+        justify-content: center;
+        gap: 5px;
+
+        .isAvailable{ color: #2BB831; }
+        .isNotAvailable{ color: #FF0000; }
+    }
+
+    .productAddToCart{
+        margin-bottom: 15px;
+        height: 85px;
+        text-align: center;
+
+        img{height: 100%;}
+        .outOfStock{
+            filter: grayscale(100%);
+        }
+    }
+}

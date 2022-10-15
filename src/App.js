@@ -8,7 +8,7 @@ import Category from "./Pages/Category";
 import Error from "./Pages/Error";
 import Orders from "./Pages/Orders";
 import Payment from "./Pages/Payment";
-import Productdetails from "./Pages/Products";
+import Product from "./Pages/Product";
 import Profile from "./Pages/Profile";
 import Rejected from "./Pages/Rejected";
 import Signup from "./Pages/Signup";
@@ -47,7 +47,7 @@ function App() {
           <Route path="/error" element={<Error />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/payment" element={<Payment />} />
-          <Route path="/products/:id" element={<Productdetails />} />
+          <Route path="/products/:_id" element={<Product addProductToCart={AddProductToCart} />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/rejected" element={<Rejected />} />
           <Route path="/signup" element={<Signup />} />

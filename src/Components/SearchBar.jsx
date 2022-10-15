@@ -1,15 +1,15 @@
 import { useState } from "react"
 import axios from "axios"
-import { DebounceInput } from 'react-debounce-input';
 
 function SearchBar() {
     const [search, setSearch] = useState("")
     const [result, setResult] = useState([])
+    
 
     function searchRequest(value) {
         setSearch(value)
 
-        if(search.length > 1){ 
+        if(search.length > 1){
             axios.get(`/products?q=${value}`)
             .then(response => setResult(response.data))
             .catch(err => console.log("erreur axios search:", err))
@@ -17,21 +17,12 @@ function SearchBar() {
         } else{
             setResult([])
         }
-
-        console.log("result:",result)
-        console.log("search:",search)
     }
 
-    
     return (
         <div>
             <div className="navbar-searchBar">
-                <DebounceInput
-                    placeholder="Put your research"
-                    debounceTimeout={150}
-                    value={search}
-                    onChange={(event) => searchRequest(event.target.value)}
-                />
+            <input type="text" value={search} onChange={(event) => searchRequest(event.target.value)} placeholder="Put your research" />
             </div>
             {
                 result.length > 0 &&

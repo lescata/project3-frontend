@@ -1,0 +1,18 @@
+.product{  
+    .control-dots{
+        transform: translateY(-30px);
+        opacity: 50;
+
+        .dot{
+            background-color: gray;
+        }
+        .selected{
+            background-color: black;
+        }
+    }
+
+    
+    .carousel.carousel-slider .control-arrow{
+        background-color: rgba(0,0,0,0.5);
+    }
+}

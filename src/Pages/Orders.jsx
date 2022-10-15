@@ -20,7 +20,7 @@ function Orders() {
           <p className="orderNumber">N°4MQUKFYHQ7</p>
           <p className="orderShipp">Shipped on 26/05/2021</p>
           <p className="orderTracking">
-            Parcel tracking : <a href="#">MZ54H0857FR</a>
+            Parcel tracking : <a href="/blabla">MZ54H0857FR</a>
           </p>
         </div>
         <div className="orderDetails">

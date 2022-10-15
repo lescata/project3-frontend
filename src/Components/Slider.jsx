@@ -1,7 +1,7 @@
 import { Carousel } from 'react-responsive-carousel';
-import json from '../Slider/carousel.json'
+import json from '../Slider/slider.homepage.json'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
-import '../Slider/carousel.scss'
+import '../Slider/slider.homepage.scss'
 
 function Slider(){
     return(
