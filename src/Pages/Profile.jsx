@@ -1,8 +1,17 @@
 import "../Sass/profile.scss";
 import "../Sass/Onglet-Scss/onglets.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
+import { useContext } from "react"
+import { AuthContext } from "../Context/auth.context"
 
 function Profile() {
+  const {isLoggedIn} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  if(!isLoggedIn){
+    return navigate("/")
+  }
+
   return (
     <div className="contactDetails">
       <div className="container-onglets">

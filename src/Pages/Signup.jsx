@@ -1,7 +1,8 @@
 import "../Sass/signup.scss";
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { AuthContext } from "../Context/auth.context"
 
 
 function Signup() {
@@ -11,7 +12,12 @@ function Signup() {
   const [lastName, setLastName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
+  const {isLoggedIn} = useContext(AuthContext);
   const navigate = useNavigate();
+
+  if(isLoggedIn){
+    return navigate("/")
+  }
 
   const handleEmail = (e) => setEmail(e.target.value);
   const handlePassword = (e) => setPassword(e.target.value);
@@ -80,6 +86,7 @@ function Signup() {
             required
           />
           <button className="login-btn" type="submit">Signup!</button>
+          {errorMessage && <h4>{errorMessage}</h4>}
         </div>
       </form>
       <p>Already have an Account?</p>

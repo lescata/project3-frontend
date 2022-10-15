@@ -1,7 +1,26 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../Sass/orders.scss";
+import { useState, useContext, useEffect } from "react"
+import { AuthContext } from "../Context/auth.context"
+import axios from "axios"
 
 function Orders() {
+  const { isLoggedIn, storedToken } = useContext(AuthContext);
+  const [orders, setOrders] = useState("Loading")
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios.get("/orders")
+      .then(response => setOrders(response.data))
+  }, [storedToken])
+
+  if (orders === "Loading") { return <div>Loading...</div> }
+  if (orders.length === 1) { return <div>Not order</div> }
+
+  if (!isLoggedIn) {
+    return navigate("/")
+  }
+
   return (
     <div className="orderHistory">
       <div className="container-onglets">
@@ -13,9 +32,41 @@ function Orders() {
         </NavLink>
       </div>
       <h1>HISTORY OF YOUR ORDERS</h1>
-      <div className="orderBorder">
-        <div className="orders">
-          <p className="orderOpenDetails">Details</p>
+      {
+        orders.map(order => (
+          <div className="order" key={order._id}>
+            <div className="orderResume">
+              <p className="orderDetailsTxt">Details</p>
+              <p className="orderDate">{order.date}</p>
+              <p className="orderNumber">N°{order._id}</p>
+              <p className="orderTracking">
+                Parcel tracking : <a href="/blabla">MZ54H0857FR</a>
+              </p>
+            </div>
+
+            <div className="orderDetails">
+
+              {
+                order.products.map(product => (
+                  <div className="orderArticle" key={product._id}>
+                    <img src={product.productId.images[0]} alt="img" />
+                    <p className="orderReference">{product.productId.name}</p>
+                    <p className="orderPrice">{product.price.value} €</p>
+                  </div>
+                ))
+              }
+
+              <div className="orderDetailsPrice">
+                <p className="orderTotalText">TOTAL ORDER :</p>
+                <p className="orderTotal">{order.price.value} €</p>
+              </div>
+            </div>
+          </div>
+        ))
+      }
+      {/* <div className="order">
+        <div className="orderResume">
+          <p className="orderDetailsTxt">Details</p>
           <p className="orderDate">13/11/2021</p>
           <p className="orderNumber">N°4MQUKFYHQ7</p>
           <p className="orderShipp">Shipped on 26/05/2021</p>
@@ -38,9 +89,9 @@ function Orders() {
             <p className="orderTotalText">TOTAL ORDER :</p>
             <p className="orderTotal">399,95€</p>
           </div>
-        </div>
-      </div>
-    </div>
+        </div> 
+      </div>*/}
+    </div >
   );
 }
 

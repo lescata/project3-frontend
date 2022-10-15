@@ -18,7 +18,7 @@ function Products(props) {
       .catch(err => console.log(err))
   }, [_id]);
 
-  if (product === "loading") { return <div>gfgd</div> }
+  if (product === "loading") { return <div>Loading...</div> }
 
   return (
     <div className="product">

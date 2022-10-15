@@ -6,17 +6,18 @@ import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import { AuthContext } from "../Context/auth.context";
 
-const API_URL= "http://localhost:5005";
-
-
 function Login() {
 const [email, setEmail]= useState("");
 const [password, setPassword] = useState("");
 const [errorMessage, setErrorMessage]= useState(undefined);
+const {storeToken, authenticateUser} = useContext(AuthContext);
 
+const {isLoggedIn} = useContext(AuthContext);
 const navigate = useNavigate();
 
-const {storeToken} = useContext(AuthContext);
+if(isLoggedIn){
+  return navigate("/")
+}
 
 const handleEmail = (e) => setEmail(e.target.value);
 const handlePassword = (e) => setPassword(e.target.value);
@@ -27,9 +28,8 @@ const handleLoginSubmit = (e) => {
  
     axios.post(`/sessions`, requestBody)
       .then((response) => {
-        console.log('JWT token', response.data.authToken );
-
         storeToken(response.data.authToken);
+        authenticateUser()
       
         navigate('/');    //display homepage                          
       })

@@ -40,7 +40,6 @@ function Cart() {
     cart.map(el=>(
       totalPrice = totalPrice + (el.price * el.quantity)
     ))
-
     return totalPrice
   }
 
@@ -48,14 +47,19 @@ function Cart() {
     <div className="cartGlobale">
       <h1>YOUR CART</h1>
         {
-          cart.length === 0 ? <div>Cart Empty</div> :
-          <div className="cartlist">
+          cart.length === 0
+          ? <div className="cartEmpty">
+            <img src="https://res.cloudinary.com/shalltear/image/upload/v1665845427/Projet%203/emptyCart_euyak0.png" alt="" />
+            <h4>OOPS</h4>
+            <p>Your cart is empty</p>
+          </div>
+          : <div className="cartList">
             {
               cart.map((cartEl,i) =>{
                   return (<div className="cart" key={cartEl._id}>
-                    <div className="cartImage"><img src={cartEl.image} alt="" /></div>
+                    <div className="cartImage"><Link to={`/products/${cartEl._id}`}><img src={cartEl.image} alt="" /></Link></div>
                     <div className="cartInfos">
-                      <h4>{cartEl.name}</h4>
+                      <h4><Link to={`/products/${cartEl._id}`}>{cartEl.name}</Link></h4>
                       <div className="quantityAndPrice">
                         <input type="number" min={1} value={cartEl.quantity} onChange={event=>changeQuantity(i,event)}/>
                         <span>{cartEl.price}€</span>

@@ -1,6 +1,16 @@
 import "../Sass/rejected.scss";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react"
+import { AuthContext } from "../Context/auth.context"
 
 function Rejected() {
+  const {isLoggedIn} = useContext(AuthContext);
+  const navigate = useNavigate();
+
+  if(!isLoggedIn){
+    return navigate("/")
+  }
+
   return (
     <div className="rejected">
       <div className="rejectedImg">
