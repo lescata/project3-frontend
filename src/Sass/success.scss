@@ -1,0 +1,40 @@
+.success {
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    margin-top: 2em;
+    justify-content: center;
+    display: flex;
+    text-align: center;
+    align-items: center;
+  }
+  img {
+    margin-top: 5em;
+    display: flex;
+    max-width: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  p {
+    text-align: center;
+  }
+  .successLink {
+    margin-top: 5em;
+    background-color: #10cd2e;
+    display: flex;
+    width: 18em;
+    height: 3em;
+    box-shadow: 0 4px 4px rgb(0 0 0 / 30%);
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    span {
+      text-align: center;
+      justify-content: center;
+    }
+  }
+}
