@@ -26,14 +26,13 @@ function Navbar(){
                         <Link to="/"><img className="navbar-logo" src="https://res.cloudinary.com/shalltear/image/upload/v1664643558/Projet%203/logo_dewzrz.png" alt="" /></Link>
                     </div>
                     <div className="end">
-
                         {
                             isLoggedIn 
                             ?<span>
-                                <span onClick={logOutUser}>logOut</span>
-                                <Link to="/profile"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/user_fva09x.svg" alt="ouiii"/> </Link>
+                                <img onClick={logOutUser} className="navbar-image userLogo" src="https://res.cloudinary.com/shalltear/image/upload/v1665867743/Projet%203/logOut_fek6m1.svg" alt="" />
+                                <Link to="/profile"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1665867524/Projet%203/authOn_thwo4j.svg" alt="ouiii"/> </Link>
                             </span>
-                            :<Link to="/login"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/user_fva09x.svg" alt="paslogged in"/></Link>
+                            :<Link to="/login"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1665867524/Projet%203/authOff_ltkxj0.svg" alt="paslogged in"/></Link>
                             
                         }
                         <Link to="/cart"><img className="navbar-image" src="https://res.cloudinary.com/shalltear/image/upload/v1664643772/Projet%203/cart_xds8mu.svg" alt=""/></Link>

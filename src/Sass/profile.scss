@@ -5,22 +5,33 @@
   align-items: center;
 
   h1 {
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
   }
-}
-.address {
-  display: flex;
-  flex-direction: column;
-}
-.street {
-  .number {
-    width: 1.6em;
-    margin-right: 5px;
+
+  .address {
+    display: flex;
+    flex-direction: column;
   }
-  .streetName {
-    width: 10em;
+  
+  .street {
+    .number {
+      width: 1.6em;
+      margin-right: 5px;
+    }
+  
+    .streetName {
+      width: 10em;
+    }
   }
-}
-input {
-  margin-bottom: 2em;
+  
+  input { margin-bottom: 2em; }
+  form button{ 
+    margin-inline: 15px;
+    padding: 10px 15px;
+    background-color: #cf1010;
+    color: white;
+    box-shadow: none;
+    border: solid 1px black;
+    font-weight: bold;
+  }
 }

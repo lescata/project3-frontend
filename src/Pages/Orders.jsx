@@ -1,18 +1,19 @@
-import { NavLink, useNavigate } from "react-router-dom";
 import "../Sass/orders.scss";
+import { NavLink, useNavigate } from "react-router-dom";
 import { useState, useContext, useEffect } from "react"
 import { AuthContext } from "../Context/auth.context"
 import axios from "axios"
 
 function Orders() {
-  const { isLoggedIn, storedToken } = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
   const [orders, setOrders] = useState("Loading")
   const navigate = useNavigate();
 
   useEffect(() => {
+    //axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem("authToken")}`;
     axios.get("/orders")
       .then(response => setOrders(response.data))
-  }, [storedToken])
+  }, [isLoggedIn])
 
   if (orders === "Loading") { return <div>Loading...</div> }
   if (orders.length === 1) { return <div>Not order</div> }

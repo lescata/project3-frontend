@@ -67,6 +67,16 @@ h1 {
         font-weight: bold;
         font-size: 12px;
       }
+
+      span{
+        display: flex;
+        gap: 15px;
+        .userLogo {
+          border-right: solid 2px white;
+          padding-right: 15px;
+        }
+        
+      }
     }
   }
 
