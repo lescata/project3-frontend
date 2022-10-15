@@ -9,17 +9,19 @@
     align-items: baseline;
     gap: 5px;
     font-size: 14px;
+    height: 30px;
+
     h4{
       display: flex;
       font-weight: 500;
     }
-
-    h3{
-
-    }
   }
 
   p{
+    margin-left: 30px;
+  }
+
+  li{
     margin-left: 30px;
   }
 }

@@ -40,7 +40,7 @@ function Products(props) {
       {
         product.description &&
         <div className="productDescription">
-          <h4>{product.description}</h4>
+          <p>{product.description}</p>
         </div>
       }
 
