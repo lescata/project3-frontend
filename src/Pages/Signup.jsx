@@ -2,8 +2,7 @@ import "../Sass/signup.scss";
 import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import { AuthContext } from "../Context/auth.context"
-
+import { AuthContext } from "../Context/auth.context";
 
 function Signup() {
   const [email, setEmail] = useState("");
@@ -12,11 +11,11 @@ function Signup() {
   const [lastName, setLastName] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
-  const {isLoggedIn} = useContext(AuthContext);
+  const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  if(isLoggedIn){
-    return navigate("/")
+  if (isLoggedIn) {
+    return navigate("/");
   }
 
   const handleEmail = (e) => setEmail(e.target.value);
@@ -25,18 +24,18 @@ function Signup() {
   const handleLastName = (e) => setLastName(e.target.value);
 
   const handleSignupSubmit = (e) => {
-  e.preventDefault();
-    const requestBody = { email, password, lastName,firstName };
-    axios.post(`/users`, requestBody)
+    e.preventDefault();
+    const requestBody = { email, password, lastName, firstName };
+    axios
+      .post(`/users`, requestBody)
       .then((response) => {
-        navigate('/login');
+        navigate("/login");
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
         setErrorMessage(errorDescription);
-      })
+      });
   };
-
 
   return (
     <div className="signup">
@@ -85,7 +84,9 @@ function Signup() {
             className="passwordConfirm"
             required
           />
-          <button className="login-btn" type="submit">Signup!</button>
+          <button className="login-btn" type="submit">
+            Signup!
+          </button>
           {errorMessage && <h4>{errorMessage}</h4>}
         </div>
       </form>
