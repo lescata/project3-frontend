@@ -1,4 +1,4 @@
-import { useContext } from "react"
+import { useContext, useState, useEffect } from "react"
 import { CartContext } from "../Context/cart.context"
 import "../Sass/cart.scss"
 import axios from "axios"
@@ -6,10 +6,12 @@ import { Link } from "react-router-dom"
 
 function Cart() {
   const { cart, updateCart } = useContext(CartContext)
+  const [userInfos, setUserInfos] = useState("Loading")
 
-  // const totalPrice = useMemo(() => {
-  //   return getTotalPrice()
-  // }, [cart])
+  useEffect(() => {
+    axios.get("/profile")
+      .then(response => setUserInfos(response.data))
+  }, [])
 
   if (cart === 'loading') return "loading..."
 
@@ -42,7 +44,7 @@ function Cart() {
     ))
     return totalPrice
   }
-
+  //console.log(userInfos.address)
   return (
     <div className="cartGlobale">
       <h1>YOUR CART</h1>
@@ -72,21 +74,36 @@ function Cart() {
             <div className="adressGlobale">
               <div className="adressInfos">
                 <h3>Address</h3>
-                <span>25 rue du poteau fuyard 75000 Paris</span>
-                <div>France</div>
+                {
+                  userInfos === "Loading"
+                ? <div>loading ...</div>
+                : userInfos.address !== undefined
+                ?<div>{userInfos.address.number} {userInfos.address.street} {userInfos.address.city} <div>{userInfos.address.country}</div></div>
+                :<div>Please refer an address</div>
+                }
+
+
+
+                {/* <span>25 rue du poteau fuyard 75000 Paris</span>
+                <div>France</div> */}
               </div>
               <div className="addressLink">
                 <Link to="/profile">Change address</Link>
               </div>
             </div>
             <div className="totalPrice">
-
               <h3>TOTAL TTC</h3>
               <span>{getTotalPrice()} €</span>
             </div>
             <div className="toOrder">
               <span onClick={deleteCart}>Erase cart</span>
-              <Link to="/orders/payment">ORDER</Link>
+
+              {
+                userInfos.address
+                ? <Link className="cartOrder" to="/orders/payment">ORDER</Link>
+                : <div className="cartOrder off">ORDER</div>
+              }
+              
             </div>
           </div>
         }
