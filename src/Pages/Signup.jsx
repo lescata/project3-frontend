@@ -79,7 +79,7 @@ function Signup() {
             required
           />
           <input
-            type="passwordConfirm"
+            type="password"
             placeholder="Password Confirmation"
             className="passwordConfirm"
             required
