@@ -11,6 +11,7 @@ function Cart() {
   useEffect(() => {
     axios.get("/profile")
       .then(response => setUserInfos(response.data))
+      .catch(() => setUserInfos("notLogged"))
   }, [])
 
   if (cart === 'loading') return "loading..."
@@ -73,13 +74,13 @@ function Cart() {
             }
             <div className="adressGlobale">
               <div className="adressInfos">
-                <h3>Address</h3>
                 {
                   userInfos === "Loading"
-                ? <div>loading ...</div>
-                : userInfos.address !== undefined
-                ?<div>{userInfos.address.number} {userInfos.address.street} {userInfos.address.city} <div>{userInfos.address.country}</div></div>
-                :<div>Please refer an address</div>
+                    ? <div>loading ...</div>
+                    : userInfos === "notLogged" ? <span></span>
+                      : userInfos.address !== undefined
+                        ?<div><h3>Address</h3>{userInfos.address.number} {userInfos.address.street} <div>{userInfos.address.city}</div><div>{userInfos.address.country}</div></div>
+                        :<div>Please refer an address</div>
                 }
 
 
@@ -87,9 +88,13 @@ function Cart() {
                 {/* <span>25 rue du poteau fuyard 75000 Paris</span>
                 <div>France</div> */}
               </div>
-              <div className="addressLink">
-                <Link to="/profile">Change address</Link>
-              </div>
+              {
+                userInfos !== "notLogged" && 
+                <div className="addressLink">
+                  <Link to="/profile">Change address</Link>
+                </div>
+              }
+
             </div>
             <div className="totalPrice">
               <h3>TOTAL TTC</h3>
