@@ -95,8 +95,8 @@ function Navbar() {
                 alt=""
               />
             </Link>
-            {cart.length > 0 && <div className="infoCart">{cart.length}</div>}
           </div>
+            {cart.length > 0 && <div className="infoCart">{cart.length}</div>}
         </div>
         <SearchBar />
       </div>
