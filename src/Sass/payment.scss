@@ -1,0 +1,73 @@
+
+.payment {
+    text-align: center;
+    font-family: "Ubuntu";
+    justify-content: center;
+    min-height: calc(100vh - 175px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    .text {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+    }
+    .text-twoo {
+      font-weight: bold;
+      text-align: center;
+    }
+    .text-three {
+      text-decoration: none;
+      color: red;
+      font-weight: bold;
+      margin-right: 5px;
+    }
+
+    img{
+    
+        max-width: 85%;
+        margin-top: 4em;
+    }
+  }
+  
+  .payment-connection {
+    background-color: rgb(233, 233, 233);
+    width: 17em;
+    height: 20em;
+    position: relative;
+    border-radius: 2em;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  
+    input {
+      width: 15em;
+      height: 2em;
+      text-align: center;
+      
+    }
+    input[type=number] {
+        -moz-appearance: textfield;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+      
+    
+    .payment-btn {
+      width: 40%;
+      height: 8%;
+      border-radius: 2em;
+      background-color: rgb(75, 255, 47);
+      justify-content: center;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+      display: flex;
+      align-items: center;
+    }
+  }
+  

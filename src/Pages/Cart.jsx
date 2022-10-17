@@ -86,7 +86,7 @@ function Cart() {
             </div>
             <div className="toOrder">
               <span onClick={deleteCart}>Erase cart</span>
-              <Link to="/orders/payment">ORDER</Link>
+              <Link to="/Payment">ORDER</Link>
             </div>
           </div>
         }
