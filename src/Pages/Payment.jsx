@@ -48,12 +48,16 @@ function Payment() {
     const requestBody = { name, pan, cvv, expiry};
 
     axios
-      .post(`/sessions`, requestBody)
+      .post(`/payment`, requestBody)
       .then((response) => {
-        storeToken(response.data.authToken);
-        authenticateUser();
-
-        navigate("/"); //display homepage
+        if (response.data.message === "success"){
+          navigate("/success")
+        }
+        else {
+          setErrorMessage (response.data.message)
+        }
+       
+        //navigate("/"); //display homepage
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
