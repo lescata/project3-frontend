@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { AuthContext } from "../Context/auth.context";
 import "../Sass/payment.scss";
 import { Link } from "react-router-dom";
@@ -17,6 +17,13 @@ function Payment() {
   const [errorMessage, setErrorMessage] = useState(undefined);
   const { storeToken, authenticateUser } = useContext(AuthContext);
   const { cart, updateCart } = useContext(CartContext)
+  const [ totalPrice, setTotalPrice ] = useState("")
+
+  useEffect(() => {
+    if(cart !== "loading"){
+      getTotalPrice()
+    }
+  }, [cart])
 
   if (!isLoggedIn) {
     return navigate("/");
@@ -27,12 +34,13 @@ function Payment() {
   const handleExpiry = (e) => setExpiry(e.target.value);
   const handleCvv= (e) => setCvv(e.target.value);
  
+
   function getTotalPrice(){
-    let totalPrice = 0
+    let price = 0
     cart.map(el=>(
-      totalPrice = totalPrice + (el.price * el.quantity)
+      price = price + (el.price * el.quantity)
     ))
-    return totalPrice
+    setTotalPrice(price)
   }
 
   const handlePaymentProcess = (e) => {
@@ -97,7 +105,7 @@ function Payment() {
             required
           />
           <button className="payment-btn" type="submit">
-            Pay {getTotalPrice}€
+            Pay {totalPrice}€
           </button>
         </form>
         {errorMessage && <p className="error-message">{errorMessage}</p>}

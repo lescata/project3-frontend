@@ -105,7 +105,7 @@ function Cart() {
 
               {
                 userInfos.address
-                ? <Link className="cartOrder" to="/orders/payment">ORDER</Link>
+                ? <Link className="cartOrder" to="/payment">ORDER</Link>
                 : <div className="cartOrder off">ORDER</div>
               }
               
