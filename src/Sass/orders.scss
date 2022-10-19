@@ -7,6 +7,8 @@
   p {
     margin: 0;
   }
+  font-family: "Inter";
+
   .orderResume {
     // border-bottom: 1px solid black;
     background-color: #d9d9d9;
@@ -25,6 +27,8 @@
     display: flex;
     justify-content: center;
     background-color: #d9d9d9;
+    font-weight: bold;
+    font-style: italic;
   }
   .orderDetails {
     background-color: white;
@@ -32,39 +36,60 @@
       width: 100px;
       height: auto;
     }
-  }
-  .orderDetailsPrice {
-    background-color: red;
-    color: white;
-    display: flex;
-    align-items: center;
-    font-weight: 700;
-    height: 2em;
-    cursor: pointer;
+    .orderDetailsPrice {
+      background-color: red;
+      color: white;
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      height: 2em;
+      text-decoration: none;
 
-    text-decoration: none;
+      .orderTotal {
+        margin-right: 1em;
+        margin-left: auto;
+      }
+      .orderTotalText {
+        margin-left: 1em;
+      }
+    }
   }
-  .orderTotal {
-    margin-right: 1em;
-    margin-left: auto;
+
+  .orderArticle:not(:nth-child(1)){
+    border-top: dotted 1px gray;
   }
-  .orderTotalText {
-    margin-left: 1em;
-  }
-  .orderReference {
-    display: flex;
-    align-items: center;
-  }
+
   .orderArticle {
     display: flex;
-    max-height: 100px;
+    height: 100px;
     overflow: hidden;
+    margin-inline: 15px;
+
+    .orderImage{
+      display: flex;
+      align-items: center;
+    }
+
+    .orderReference {
+      margin-inline: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .orderPrice{
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      width: 20%;
+    }
   }
-  .orderReference {
-    margin-right: 1em;
-    margin-left: auto;
-  }
+
   .order {
     border: 0.1px solid #9f9494;
+
+    .orderResume{
+      padding-inline: 30px;
+      padding-block: 10px;
+    }
   }
 }
