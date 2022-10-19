@@ -1,4 +1,5 @@
 import "../Sass/success.scss";
+import { Link } from "react-router-dom";
 
 function Success() {
   return (
@@ -15,7 +16,7 @@ function Success() {
           <p>You wil receive an order confirmation email with order details.</p>
         </div>
         <div className="successLink">
-          <span>Continue Shopping</span>
+          <Link to={"/"}><span>Continue Shopping</span></Link>
         </div>
       </div>
     </div>
