@@ -24,6 +24,7 @@ import { CartContext } from "./Context/cart.context"
 function App() {
   const { updateCart } = useContext(CartContext)
   axios.defaults.withCredentials = true;
+  axios.defaults.headers['Access-Control-Allow-Origin'] = "*"
   axios.defaults.baseURL = "http://localhost:5005/api"
 
   function AddProductToCart(id){
