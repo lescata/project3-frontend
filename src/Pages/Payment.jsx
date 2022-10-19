@@ -2,7 +2,6 @@ import { useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../Context/auth.context";
 import "../Sass/payment.scss";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { CartContext } from "../Context/cart.context"
@@ -10,12 +9,12 @@ import { CartContext } from "../Context/cart.context"
 function Payment() {
   const { isLoggedIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  
   const [pan, setPan] = useState("");
   const [name, setName] = useState("");
   const [cvv, setCvv] = useState("");
   const [expiry, setExpiry] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
-  const { storeToken, authenticateUser } = useContext(AuthContext);
   const { cart, updateCart } = useContext(CartContext)
   const [ totalPrice, setTotalPrice ] = useState("")
 
@@ -51,6 +50,7 @@ function Payment() {
       .post(`/payment`, requestBody)
       .then((response) => {
         if (response.data.message === "success"){
+          updateCart([])
           navigate("/success")
         }
         else {

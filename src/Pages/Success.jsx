@@ -11,7 +11,6 @@ function Success() {
         />
         <div className="successText">
           <p>Thank you for your Purchase!</p>
-          <p>your order ID is :{}</p>
           <p>You wil receive an order confirmation email with order details.</p>
         </div>
         <div className="successLink">

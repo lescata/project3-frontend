@@ -10,17 +10,19 @@ function Orders() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    //axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem("authToken")}`;
+    axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem("authToken")}`;
     axios.get("/orders")
       .then(response => setOrders(response.data))
   }, [isLoggedIn])
 
   if (orders === "Loading") { return <div>Loading...</div> }
-  if (orders.length === 1) { return <div>Not order</div> }
+  // if (orders.length === 1) { return <div>Not order</div> }
 
   if (!isLoggedIn) {
     return navigate("/")
   }
+
+  console.log("orders:",orders)
 
   return (
     <div className="orderHistory">
@@ -34,36 +36,37 @@ function Orders() {
       </div>
       <h1>HISTORY OF YOUR ORDERS</h1>
       {
-        orders.map(order => (
-          <div className="order" key={order._id}>
-            <div className="orderResume">
-              <p className="orderDetailsTxt">Details</p>
-              <p className="orderDate">{order.date}</p>
-              <p className="orderNumber">N°{order._id}</p>
-              <p className="orderTracking">
-                Parcel tracking : <a href="/blabla">MZ54H0857FR</a>
-              </p>
-            </div>
+        orders.length > 0 &&
+          orders.map(order => (
+            <div className="order" key={order._id}>
+              <div className="orderResume">
+                <p className="orderDetailsTxt">Details</p>
+                <p className="orderDate">Date : {order.date.substring(0,10)}</p>
+                <p className="orderNumber">Order N°{ order._id.substring(0,8) }</p>
+              </div>
 
-            <div className="orderDetails">
+              <div className="orderDetails">
 
-              {
-                order.products.map(product => (
-                  <div className="orderArticle" key={product._id}>
-                    <img src={product.productId.images[0]} alt="img" />
-                    <p className="orderReference">{product.productId.name}</p>
-                    <p className="orderPrice">{product.price.value} €</p>
-                  </div>
-                ))
-              }
+                {
+                  order.products.map(product => (
+                    <div className="orderArticle" key={product._id}>
+                      <div className="orderImage">
+                        <img src={product.productId.images[0]} alt="img" />
+                      </div>
+                      
+                      <p className="orderReference">{product.productId.name}</p>
+                      <p className="orderPrice">{product.price.value} €</p>
+                    </div>
+                  ))
+                }
 
-              <div className="orderDetailsPrice">
-                <p className="orderTotalText">TOTAL ORDER :</p>
-                <p className="orderTotal">{order.price.value} €</p>
+                <div className="orderDetailsPrice">
+                  <p className="orderTotalText">TOTAL ORDER :</p>
+                  <p className="orderTotal">{order.totalPrice.value} €</p>
+                </div>
               </div>
             </div>
-          </div>
-        ))
+          ))
       }
       {/* <div className="order">
         <div className="orderResume">
