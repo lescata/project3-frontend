@@ -51,7 +51,7 @@ function Orders() {
                   order.products.map((product, productIndex) => (
                     <div className="orderArticle" key={product._id}>
                       <div className="orderImage">
-                        <img src={product.productId.images[0]} alt="img" />
+                        <img src={product.image} alt="img" />
                       </div>
                       
                       <p className="orderReference">{product.productId.name}</p>
