@@ -25,7 +25,7 @@ function App() {
   const { updateCart } = useContext(CartContext)
 
   axios.defaults.withCredentials = true
-  axios.defaults.headers['Access-Control-Allow-Origin'] = "https://j-material.fly.dev"
+  //axios.defaults.headers['Access-Control-Allow-Origin'] = "https://j-material.fly.dev"
   axios.defaults.baseURL = "https://j-material.fly.dev/api"
 
 
