@@ -54,7 +54,7 @@ function Orders() {
                         <img src={product.productId.images[0]} alt="img" />
                       </div>
                       
-                      <p className="orderReference">{product.name}</p>
+                      <p className="orderReference">{product.productId.name}</p>
                       <p className="orderPrice">{product.price.value} €</p>
                     </div>
                   ))
