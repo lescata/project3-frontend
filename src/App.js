@@ -24,7 +24,7 @@ import { CartContext } from "./Context/cart.context"
 function App() {
   const { updateCart } = useContext(CartContext)
 
-  axios.defaults.headers['Access-Control-Allow-Origin'] = "https://j-material.fly.dev/"
+  axios.defaults.headers['Access-Control-Allow-Origin'] = "https://jmaterial.netlify.app"
   axios.defaults.withCredentials = true
   axios.defaults.baseURL = "https://j-material.fly.dev/api"
 
