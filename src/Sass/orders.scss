@@ -71,8 +71,8 @@
     }
 
     .orderReference {
-      justify-content: center; 
       display: flex; 
+      margin-left : 5%;
       align-items: center; 
     }
 
@@ -82,11 +82,13 @@
       margin-left: auto;
       justify-content: flex-end;
       width: 20%;
+      font-style: italic;
     }
   }
 
   .order {
     border: 0.1px solid #9f9494;
+    margin-bottom: 50px;
 
     .orderResume{
       padding-inline: 30px;
