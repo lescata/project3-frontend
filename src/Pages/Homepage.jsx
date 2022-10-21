@@ -1,5 +1,5 @@
 import "../Sass/homepage.scss"
-import Slider from "../Components/Slider"
+import Slider from "../Components/Homepage/Slider"
 import Product from "../Components/Homepage/Product";
 import productsJson from "../newness.json"
 //import styled from '@emotion/styled'
