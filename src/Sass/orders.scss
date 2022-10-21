@@ -71,15 +71,16 @@
     }
 
     .orderReference {
-      margin-inline: auto;
-      display: flex;
-      align-items: center;
+      justify-content: center; 
+      display: flex; 
+      align-items: center; 
     }
 
     .orderPrice{
       display: flex;
       align-items: center;
-      justify-content: end;
+      margin-left: auto;
+      justify-content: flex-end;
       width: 20%;
     }
   }
