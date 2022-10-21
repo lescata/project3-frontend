@@ -35,7 +35,7 @@ function Category(props) {
                   {product.stock > 0 ? <div className="isAvailable">IN STOCK</div> : <div className="isNotAvailable">OUT OF STOCK</div>}
                 </span>
                 <div>
-                  <span className="productPrice">{product.price.value}€ </span>
+                  {product.price.value} €
                   {
                     product.stock > 0 ?
                       <img className="cartLogo" onClick={e => props.addProductToCart(product._id)} src="https://res.cloudinary.com/shalltear/image/upload/v1664820508/Projet%203/cartLogo_wzapnc.svg" alt="" />
