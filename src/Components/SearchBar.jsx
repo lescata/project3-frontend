@@ -1,10 +1,11 @@
 import { useState } from "react"
 import axios from "axios"
+import { useNavigate } from "react-router-dom"
 
 function SearchBar() {
     const [search, setSearch] = useState("")
     const [result, setResult] = useState([])
-    
+    const navigate = useNavigate();
 
     function searchRequest(value) {
         setSearch(value)
@@ -19,6 +20,11 @@ function SearchBar() {
         }
     }
 
+    function searchLink(_id){
+        setResult([])
+        navigate(`/products/${_id}`)
+    }
+
     return (
         <div>
             <div className="navbar-searchBar">
@@ -29,12 +35,10 @@ function SearchBar() {
                 <div className="searchResult">
                     {
                         result.map(el=>(
-                            <a href={`/products/${el._id}`} key={`search${el._id}`}>
-                                <div className="searchCard">
-                                    <img src={el.images[0]} alt=""/>
-                                    <span>{el.name}</span>
-                                </div>
-                            </a>
+                            <div className="searchCard" onClick={e=> searchLink(el._id)} key={`search${el._id}`} >
+                                <img src={el.images[0]} alt=""/>
+                                <span>{el.name}</span>
+                            </div>
                         ))
                     }
                 </div>
