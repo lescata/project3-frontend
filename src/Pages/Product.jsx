@@ -10,8 +10,6 @@ function Products(props) {
   const { _id } = useParams()
   const [product, setProduct] = useState("loading")
 
-  console.log("product =", product.description)
-
   useEffect(() => {
     axios.get(`/product/${_id}`)
       .then(response => { console.log(response.data); setProduct(response.data) })

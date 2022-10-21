@@ -37,7 +37,7 @@ function Orders() {
       <h1>HISTORY OF YOUR ORDERS</h1>
       {
         orders.length > 0 &&
-          orders.map((order, orderIndex) => (
+          orders.map((order) => (
             <div className="order" key={order._id}>
               <div className="orderResume">
                 <p className="orderDetailsTxt">Details</p>
@@ -48,13 +48,13 @@ function Orders() {
               <div className="orderDetails">
 
                 {
-                  order.products.map((product, productIndex) => (
+                  order.products.map((product) => (
                     <div className="orderArticle" key={product._id}>
                       <div className="orderImage">
                         <img src={product.productId.images[0]} alt="img" />
                       </div>
                       
-                      <p className="orderReference">{product.productId.name}</p>
+                      <p className="orderReference"><NavLink to={`/products/${product.productId._id}`}>{product.productId.name}</NavLink></p>
                       <p className="orderPrice">{product.price.value} €</p>
                     </div>
                   ))
